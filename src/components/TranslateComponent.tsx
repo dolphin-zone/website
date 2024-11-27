@@ -70,7 +70,7 @@ const TranslateComponent: React.FC = () => {
       return url;
     });
 
-    let warpcastUrl = `https://warpcast.com/~/compose?text=${encodeURIComponent(outputText)}`;
+    let warpcastUrl = `https://warpcast.com/~/compose?text=${encodeURIComponent(outputText)}&channelKey=dolphin-zone`;
 
     if (embedUrls.length > 0) {
       warpcastUrl += embedUrls
