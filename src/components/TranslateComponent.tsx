@@ -106,7 +106,7 @@ const TranslateComponent: React.FC = () => {
   return (
     <div style={{ maxWidth: "64ch", margin: "0 auto" }}>
       <header>
-        <label>Input: {inputLabel}</label>
+        <label>{inputLabel ? `${inputLabel} ` : "Input"}:</label>
         <label className="button">
           <input
             type="checkbox"
@@ -132,7 +132,7 @@ const TranslateComponent: React.FC = () => {
         }
       />
       <header>
-        <label>Output: {outputLabel}</label>
+        <label>{outputLabel ? `${outputLabel} ` : "Output"}:</label>
         <button onClick={handleSwap} disabled={!outputText}>
           Swap
         </button>
