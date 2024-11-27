@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { translate, isDolphin } from "@dolphin-zone/translator";
-import styles from "./TranslateComponent.module.css";
 
 const TranslateComponent: React.FC = () => {
   const [inputText, setInputText] = useState<string>("");
@@ -8,6 +7,8 @@ const TranslateComponent: React.FC = () => {
   const [outputLabel, setOutputLabel] = useState<string>("");
   const [inputLabel, setInputLabel] = useState<string>("");
   const [replaceSpaces, setReplaceSpaces] = useState<boolean>(true);
+
+  const maxLength = outputText.length < 280 ? 280 : 1024;
 
   const handleTranslate = async (text: string) => {
     const translatedText = await translate(text);
@@ -103,10 +104,10 @@ const TranslateComponent: React.FC = () => {
   };
 
   return (
-    <div className={styles.translater}>
-      <header className={styles.header}>
-        <label className={styles.label}>Input: {inputLabel}</label>
-        <label className={styles.button}>
+    <div style={{ maxWidth: "64ch", margin: "0 auto" }}>
+      <header>
+        <label>Input: {inputLabel}</label>
+        <label className="button">
           <input
             type="checkbox"
             checked={replaceSpaces}
@@ -115,54 +116,37 @@ const TranslateComponent: React.FC = () => {
           />
           Hyphenate
         </label>
-        <button
-          className={styles.button}
-          onClick={handleClear}
-          disabled={!outputText}
-        >
+        <button onClick={handleClear} disabled={!outputText}>
           Clear
         </button>
-        <button className={styles.button} onClick={handlePaste}>
-          Paste
-        </button>
+        <button onClick={handlePaste}>Paste</button>
       </header>
       <textarea
-        className={styles.textarea}
         value={inputText}
         onChange={handleInputChange}
         placeholder="Write or paste your text here"
       />
-      <header className={styles.header}>
-        <label className={styles.label}>Output: {outputLabel}</label>
-        <button
-          className={styles.button}
-          onClick={handleSwap}
-          disabled={!outputText}
-        >
+      <header>
+        <label>Output: {outputLabel}</label>
+        <button onClick={handleSwap} disabled={!outputText}>
           Swap
         </button>
-        <button
-          className={styles.button}
-          onClick={handleCopy}
-          disabled={!outputText}
-        >
+        <button onClick={handleCopy} disabled={!outputText}>
           Copy
         </button>
       </header>
-      <textarea className={styles.textarea} value={outputText} readOnly />
-      <header className={`${styles.header} ${!outputText ? "hidden" : ""}`}>
-        <label className={styles.label}>
-          Character Count: {outputText.length}
+      <textarea value={outputText} readOnly />
+      <header className={!outputText ? "hidden" : ""}>
+        <label>
+          {outputText.length} / {maxLength}
         </label>
         <button
-          className={styles.button}
           onClick={handleCastToWarpcast}
           disabled={!outputText || outputText.length > 1024}
         >
           Post to Warpcast
         </button>
         <button
-          className={styles.button}
           onClick={handlePostToTwitter}
           disabled={!outputText || outputText.length > 280}
         >

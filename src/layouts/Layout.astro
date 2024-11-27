@@ -1,4 +1,6 @@
 ---
+import "../styles/style.css";
+
 interface Props {
 	title: string;
 }
@@ -11,78 +13,22 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="EeEE E e EEE eEEEEe EEeE EeEE EE EeeE EeeE EE eE eeE eEEEEe eeE eee" />
-		<meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+    <meta
+      name="theme-color"
+      content="#00CCCC"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#003366"
+      media="(prefers-color-scheme: dark)"
+    />
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--color-foreground: #111;
-		--color-background: #0CC;
-		--color-primary: #069;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--color-foreground: #eee;
-			--color-background: #036;
-			--color-primary: #39c;
-		}
-	}
-
-	html {
-		background: var(--color-background);
-		color: var(--color-foreground);
-		box-sizing: border-box;
-		font-family: system-ui, sans-serif;
-	}
-
-	*,
-	*::before,
-	*::after {
-		box-sizing: inherit;
-	}
-
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-	h1 {
-		text-align: center;
-	}
-
-	.divider {
-		text-align: center;
-		font-size: 1.5em;
-		margin: 2em 0;
-	}
-
-	.small {
-		font-size: 0.75em;
-		opacity: 0.5;
-	}
-
-	footer {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin: 2em 0;
-	}
-
-	a {
-		color: currentColor;
-		&:hover {
-			color: var(--color-primary);
-		}
-	}
-</style>
