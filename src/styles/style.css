@@ -14,6 +14,7 @@ html {
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
+  overflow-x: hidden;
 }
 
 *,
@@ -129,5 +130,9 @@ button {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
+
+    p {
+      word-break: break-all;
+    }
   }
 }
