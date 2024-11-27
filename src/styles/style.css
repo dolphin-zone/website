@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap");
+
 :root {
   --color-foreground: #111;
   --color-background: #0cc;
@@ -8,7 +10,9 @@ html {
   background: var(--color-background);
   color: var(--color-foreground);
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
   font-size: 21px;
 }
 
