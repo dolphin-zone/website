@@ -108,7 +108,11 @@ const TranslateComponent: React.FC = () => {
           />
           Hyphenate
         </label>
-        <button className={styles.button} onClick={handleClear}>
+        <button
+          className={styles.button}
+          onClick={handleClear}
+          disabled={!outputText}
+        >
           Clear
         </button>
         <button className={styles.button} onClick={handlePaste}>
@@ -123,7 +127,11 @@ const TranslateComponent: React.FC = () => {
       />
       <header className={styles.header}>
         <label className={styles.label}>Output: {outputLabel}</label>
-        <button className={styles.button} onClick={handleSwap}>
+        <button
+          className={styles.button}
+          onClick={handleSwap}
+          disabled={!outputText}
+        >
           Swap
         </button>
         <button
