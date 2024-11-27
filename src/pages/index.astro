@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TranslateComponent from '../components/TranslateComponent';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>✨ dolphin.cool ✨</h1>
+		<TranslateComponent client:load />
+		<div class="divider">🐬🐬🐬🐬🐬</div>
+		<footer>
+			<a href="https://github.com/orgs/dolphin-zone/repositories" target="_blank" rel="noopener noreferrer">GitHub</a>
+			<a href="https://dexscreener.com/base/0x00dde4d2f08497bcec6f5e0666f63e14b3a1dab9" target="_blank" rel="noopener noreferrer">DexScreener</a>
+			<a href="https://basescan.org/address/0x00dde4d2f08497bcec6f5e0666f63e14b3a1dab9" target="_blank" rel="noopener noreferrer">BaseScan</a>
+			<a href="https://warpcast.com/~/channel/dolphin-zone" target="_blank" rel="noopener noreferrer">Warpcast</a>
+			<a href="https://warpcast.com/anondolphin" target="_blank" rel="noopener noreferrer">@anondolphin</a>
+		</footer>
+	</main>
+</Layout>
+
+<style>
+	body {
+		color: white;
+	}
+
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
+	}
+
+	html {
+		box-sizing: border-box;
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: inherit;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	.divider {
+		text-align: center;
+		font-size: 1.5em;
+		margin: 2em 0;
+	}
+
+	footer {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	a {
+		color: currentColor;
+		&:hover {
+			color: #39c;
+		}
+	}
+</style>

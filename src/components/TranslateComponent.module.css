@@ -1,0 +1,51 @@
+.translater {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 10em;
+  box-sizing: border-box;
+  /* height: 100px; */
+  /* margin-bottom: 1em; */
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background: transparent;
+  font-size: 0.75em;
+  resize: none;
+  border: 1px solid;
+  color: currentColor;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+
+.label {
+  margin-right: auto;
+}
+
+.button {
+  border: none;
+  border-radius: 1em;
+  background-color: #39c;
+  color: currentColor;
+  padding: 0 0.5em;
+  cursor: pointer;
+  font-size: 0.75em;
+  margin-left: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.button:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.hidden {
+  opacity: 0;
+}
