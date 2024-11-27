@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import TranslateComponent from '../components/TranslateComponent';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="dolphin.cool">
 	<main>
-		<h1>✨ dolphin.cool ✨</h1>
+		<h1>✨ welcome to the dolphin zone ✨</h1>
 		<TranslateComponent client:load />
 		<div class="divider">🐬🐬🐬🐬🐬</div>
 		<footer>
@@ -20,69 +20,3 @@ import TranslateComponent from '../components/TranslateComponent';
 		</footer>
 	</main>
 </Layout>
-
-<style>
-	:root {
-		--color-foreground: #111;
-		--color-background: #0CC;
-		--color-primary: #069;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--color-foreground: #eee;
-			--color-background: #036;
-			--color-primary: #39c;
-		}
-	}
-
-	html {
-		background: var(--color-background);
-		color: var(--color-foreground);
-		box-sizing: border-box;
-	}
-
-	*,
-	*::before,
-	*::after {
-		box-sizing: inherit;
-	}
-
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-	h1 {
-		text-align: center;
-	}
-
-	.divider {
-		text-align: center;
-		font-size: 1.5em;
-		margin: 2em 0;
-	}
-
-	.small {
-		font-size: 0.75em;
-		opacity: 0.5;
-	}
-
-	footer {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin: 2em 0;
-	}
-
-	a {
-		color: currentColor;
-		&:hover {
-			color: var(--color-primary);
-		}
-	}
-</style>
