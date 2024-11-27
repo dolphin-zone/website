@@ -125,9 +125,10 @@ const TranslateComponent: React.FC = () => {
         value={inputText}
         onChange={handleInputChange}
         placeholder={
-          replaceSpaces
+          (replaceSpaces
             ? "write-or-paste-your-text-here"
-            : "write or paste your text here"
+            : "write or paste your text here") +
+          "\n\nEee EeE EE e E eee EeE EeeE Ee EEE e E eEee eee EEe EeE EE eE EeeE EEe e e E eEEe e EEEE E EeE E"
         }
       />
       <header>
