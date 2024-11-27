@@ -15,13 +15,16 @@ const TranslateComponent: React.FC = () => {
     const isDolphinText = isDolphin(text);
     setOutputLabel(text ? (!isDolphinText ? "🐬" : "👤") : "");
     setInputLabel(text ? (isDolphinText ? "🐬" : "👤") : "");
+    if (isDolphinText) {
+      setReplaceSpaces(false);
+    }
   };
 
   const handleInputChange = async (
     event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     let text = event.target.value;
-    if (replaceSpaces) {
+    if (replaceSpaces && !isDolphin(text)) {
       text = text.replace(/ /g, "-");
     }
     setInputText(text);
@@ -30,7 +33,7 @@ const TranslateComponent: React.FC = () => {
 
   const handlePaste = async () => {
     let text = await navigator.clipboard.readText();
-    if (replaceSpaces) {
+    if (replaceSpaces && !isDolphin(text)) {
       text = text.replace(/ /g, "-");
     }
     setInputText(text);
@@ -48,7 +51,7 @@ const TranslateComponent: React.FC = () => {
 
   const handleSwap = async () => {
     let text = outputText;
-    if (replaceSpaces) {
+    if (replaceSpaces && !isDolphin(text)) {
       text = text.replace(/ /g, "-");
     }
     setInputText(text);
@@ -85,6 +88,9 @@ const TranslateComponent: React.FC = () => {
   const handleReplaceSpacesChange = async (
     e: React.ChangeEvent<HTMLInputElement>,
   ) => {
+    if (isDolphin(inputText)) {
+      return;
+    }
     const newReplaceSpaces = e.target.checked;
     setReplaceSpaces(newReplaceSpaces);
 
@@ -105,6 +111,7 @@ const TranslateComponent: React.FC = () => {
             type="checkbox"
             checked={replaceSpaces}
             onChange={handleReplaceSpacesChange}
+            disabled={isDolphin(inputText)}
           />
           Hyphenate
         </label>
