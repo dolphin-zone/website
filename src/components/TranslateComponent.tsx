@@ -6,7 +6,7 @@ const TranslateComponent: React.FC = () => {
   const [outputText, setOutputText] = useState<string>("");
   const [outputLabel, setOutputLabel] = useState<string>("");
   const [inputLabel, setInputLabel] = useState<string>("");
-  const [replaceSpaces, setReplaceSpaces] = useState<boolean>(true);
+  const [replaceSpaces, setReplaceSpaces] = useState<boolean>(false);
 
   const maxLength = outputText.length < 280 ? 280 : 1024;
 
