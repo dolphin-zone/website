@@ -22,8 +22,30 @@ import TranslateComponent from '../components/TranslateComponent';
 </Layout>
 
 <style>
-	body {
-		color: white;
+	:root {
+		--color-foreground: #111;
+		--color-background: #0CC;
+		--color-primary: #069;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--color-foreground: #eee;
+			--color-background: #036;
+			--color-primary: #39c;
+		}
+	}
+
+	html {
+		background: var(--color-background);
+		color: var(--color-foreground);
+		box-sizing: border-box;
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: inherit;
 	}
 
 	main {
@@ -33,16 +55,6 @@ import TranslateComponent from '../components/TranslateComponent';
 		max-width: calc(100% - 2rem);
 		font-size: 20px;
 		line-height: 1.6;
-	}
-
-	html {
-		box-sizing: border-box;
-	}
-
-	*,
-	*::before,
-	*::after {
-		box-sizing: inherit;
 	}
 
 	h1 {
@@ -70,7 +82,7 @@ import TranslateComponent from '../components/TranslateComponent';
 	a {
 		color: currentColor;
 		&:hover {
-			color: #39c;
+			color: var(--color-primary);
 		}
 	}
 </style>

@@ -1,3 +1,7 @@
+::placeholder {
+  color: currentColor;
+}
+
 .translater {
   max-width: 600px;
   margin: 0 auto;
@@ -7,8 +11,6 @@
   width: 100%;
   min-height: 10em;
   box-sizing: border-box;
-  /* height: 100px; */
-  /* margin-bottom: 1em; */
   padding: 0.5em;
   border-radius: 0.5em;
   background: transparent;
@@ -31,7 +33,7 @@
 .button {
   border: none;
   border-radius: 1em;
-  background-color: #39c;
+  background-color: var(--color-primary);
   color: currentColor;
   padding: 0 0.5em;
   cursor: pointer;
