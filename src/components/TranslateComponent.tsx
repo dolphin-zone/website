@@ -124,7 +124,11 @@ const TranslateComponent: React.FC = () => {
       <textarea
         value={inputText}
         onChange={handleInputChange}
-        placeholder="Write or paste your text here"
+        placeholder={
+          replaceSpaces
+            ? "write-or-paste-your-text-here"
+            : "write or paste your text here"
+        }
       />
       <header>
         <label>Output: {outputLabel}</label>
