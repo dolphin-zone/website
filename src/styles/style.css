@@ -21,6 +21,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  outline: none;
 }
 
 main {
@@ -33,13 +34,7 @@ main {
 
 h1 {
   text-align: center;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  margin: 2em 0;
+  margin: 0;
 }
 
 a {
@@ -64,8 +59,14 @@ textarea {
   font-family: inherit;
   resize: none;
   border: 1px solid;
-  color: currentColor;
-  outline: none;
+  color: var(--color-primary);
+  &[readonly] {
+    color: currentColor;
+    &:empty {
+      opacity: 0.25;
+      cursor: not-allowed;
+    }
+  }
 }
 
 header {
@@ -77,6 +78,13 @@ header {
     align-self: center;
     margin-right: auto;
   }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
 }
 
 .button,
@@ -105,17 +113,6 @@ button {
 
 .hidden {
   opacity: 0;
-}
-
-.divider {
-  text-align: center;
-  font-size: 1.5em;
-  margin: 2em 0;
-}
-
-.small {
-  font-size: 0.75em;
-  opacity: 0.5;
 }
 
 @media (prefers-color-scheme: dark) {
